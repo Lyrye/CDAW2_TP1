@@ -13,38 +13,54 @@ import java.awt.image.RenderedImage;
 import java.io.*;
 
 @WebServlet(name = "GraphicWeatherServlet", value = "/GraphicWeatherServlet")
-
 public class GraphicWeatherServlet extends HttpServlet {
+
+    public static final int WIDTH = 500;
+    public static final int HEIGHT = 300;
+
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("image/jpeg");
-        BufferedImage  bufferedImage  =  new  BufferedImage(200,  200, BufferedImage.TYPE_INT_RGB);
+        response.setContentType("image/jpg");
+
+        BufferedImage  bufferedImage  =  new  BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d  =  bufferedImage.createGraphics();
-        g2d.dispose();
-        ImageIO.write(bufferedImage,"jpg",response.getOutputStream());
+        g2d.setColor(Color.WHITE);
+        g2d.fillRect(0, 0, WIDTH, HEIGHT);
 
-        if(request.getParameter("contry")!= null){
-            String country = request.getParameter("contry");
-            switch(country){
+        if(request.getParameter("country")!= null){
+            String country = request.getParameter("country");
+            int[] temp = new int[10];
+
+            switch(country) {
                 case "France":
-                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  200,  100));
-
+                    temp = new int[]{2, 3, 7, 8, 5, 9, 4, 1, 0, 2};
                     break;
                 case "Germany":
-                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  100,  100));
-
+                    temp = new int[]{-1, 3, 4, 10, 7, 4, 2, 1, 0, 7};
                     break;
                 case "USA":
-                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  200,  200));
-
+                    temp = new int[]{5,10,8,12,13,18,10,14,12,19};
                     break;
                 case "England":
-                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  400,  100));
+                    temp = new int[]{0, 3, 0, 1, 0, 5, 0, 1, 2,-3 };
                     break;
                 default:
+
                     break;
-            }        }
+            }
+            g2d.setColor(Color.BLACK);
+            g2d.drawLine(0, 0, 0, WIDTH);
+            g2d.drawLine(0, 3*HEIGHT/4, WIDTH, 3*HEIGHT/4);
+            g2d.setColor(Color.red);
+            for(int i = 0; i<10; i++) {
+                g2d.drawString(Integer.toString(temp[i]), i*40 + 10, - (temp[i]*15) + 3*HEIGHT/4+20);
+                g2d.fill(new Ellipse2D.Float(i * 40 + 10 , -(temp[i]*15) + 3*HEIGHT/4 -4, 8, 8));
+            }
+            ImageIO.write(bufferedImage,"jpg",response.getOutputStream());
+            g2d.dispose();
+
+        }
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

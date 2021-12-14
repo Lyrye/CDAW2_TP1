@@ -5,21 +5,21 @@
     <title>JSP - Température</title>
 </head>
 <body>
-<h1>Température</h1>
 <br/>
-<form action="SimpleWeatherServlet">
-    <label for="contry-select">Choose a country:</label>
-    <select name="contry" id="contry-select">
-        <option value="">--Choisisez un pays--</option>
-        <option value="France">France</option>
-        <option value="Germany">Allemagne</option>
-        <option value="USA">USA</option>
-        <option value="England">Angleterre</option>
-    </select>
-    <button type="submit">OK</button>
-</form>
+<ul>
+    <li><a href="hello-servlet">Hello world</a></li>
+    <li><a href="HelloWorldServlet">Hello world JSP</a></li>
+    <li><a href="GraphicWeatherServlet">Graphic weather</a></li>
+    <li><a href="TagServlet">TAG</a></li>
+</ul>
 <br/>
-<a href="/TP1_war/HelloWorldServlet">Hello world JSP</a>
+<h2>TODO</h2>
+<a href="SimpleWeatherServlet">Simple Weather</a>
+<a href="JSPWeather">Weather JSP</a>
+
+
+
+
 
 </body>
 </html>

@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @WebServlet(name = "SimpleWeatherServlet", value = "/SimpleWeatherServlet")
 
@@ -19,60 +22,64 @@ public class SimpleWeatherServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
             response.setContentType("text/html");
 
-        if(request.getParameter("contry")!=null){
-            String country = request.getParameter("contry");
+        if(request.getParameter("country")!=null){
+            String country = request.getParameter("country");
             String degree = "";
-            String[] isSelected = null;
+            List<String> isSelected = new ArrayList<>();
             String img = "";
             switch(country){
                 case "France":
                     degree = "10";
-                    isSelected = new String[]{"selected", "", "", ""};
+                    isSelected = Arrays.asList("selected", "", "", "");
                     break;
                 case "Germany":
                     degree = "11";
-                    isSelected = new String[]{"", "selected", "", ""};
+                    isSelected = Arrays.asList("", "selected", "", "");
                     break;
                 case "USA":
                     degree = "12";
-                    isSelected = new String[]{"", "", "selected", ""};
+                    isSelected = Arrays.asList("", "", "selected", "");
                     break;
                 case "England":
                     degree = "13";
-                    isSelected = new String[]{"", "", "", "selected"};
+                    isSelected = Arrays.asList("", "", "", "selected");
                     break;
                 default:
+                    isSelected = Arrays.asList("", "", "", "");
                     break;
             }
-            img = "GraphicWeatherServlet?contry="+country;
-
             writer.println("<body>\n" +
                     "<h1>Température</h1>\n" +
                     "<br/>" +
                     "<form methode='Get' action='SimpleWeatherServlet'>\n" +
-                    "        <label for=\"contry-select\">Choose a country:</label>\n" +
-                    "        <select name=\"contry\" id=\"contry-select\">\n" +
+                    "        <label for=\"country-select\">Choose a country:</label>\n" +
+                    "        <select name=\"country\" id=\"country-select\">\n" +
                     "            <option value=\"\">--Choisisez un pays--</option>\n" +
-                    "            <option " + isSelected[0] + " value=\"France\">France</option>\n" +
-                    "            <option " + isSelected[1] + " value=\"Germany\">Allemagne</option>\n" +
-                    "            <option " + isSelected[2] + " value=\"USA\">USA</option>\n" +
-                    "            <option " + isSelected[3] + " value=\"England\">Angleterre</option>\n" +
+                    "            <option " + isSelected.get(0) + " value=\"France\">France</option>\n" +
+                    "            <option " + isSelected.get(1) + " value=\"Germany\">Allemagne</option>\n" +
+                    "            <option " + isSelected.get(2) + " value=\"USA\">USA</option>\n" +
+                    "            <option " + isSelected.get(3) + " value=\"England\">Angleterre</option>\n" +
                     "        </select>\n" +
                     "        <button type=\"submit\">OK</button>\n" +
-                    "    </form>"+
-                    "<img scr='"+img+"'>"
-            );
+                    "    </form>");
+            if(isSelected.contains("selected")){
+                img = "GraphicWeatherServlet?country="+country;
+                writer.println("<p style=\"float:left;\">La température en " + country + " est de : " + degree + " degrés.</p></body>");
+                writer.println("<div style=\"clear:both\"></div>");
+                writer.println("<img style=\"float:left;\" src=\""+img+"\">");
+            }else {
+                writer.println("<p style=\"float:left;\">Sélectionnez un pays pour avoir sa température</p></body>");
+            }
 
 
 
-            writer.println("La température en " + country + " est de : " + degree + " degrés.</body>");
         } else {
             writer.println("<body>\n" +
                     "<h1>Température</h1>\n" +
                     "<br/>" +
                     "<form methode='Get' action='SimpleWeatherServlet'>\n" +
-                    "        <label for=\"contry-select\">Choose a country:</label>\n" +
-                    "        <select name=\"contry\" id=\"contry-select\">\n" +
+                    "        <label for=\"country-select\">Choose a country:</label>\n" +
+                    "        <select name=\"country\" id=\"country-select\">\n" +
                     "            <option value=\"\">--Choisisez un pays--</option>\n" +
                     "            <option  value=\"France\">France</option>\n" +
                     "            <option  value=\"Germany\">Allemagne</option>\n" +
