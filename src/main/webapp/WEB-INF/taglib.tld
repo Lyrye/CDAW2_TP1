@@ -8,7 +8,7 @@
     <uri>imt.nordeurope.j2ee.tp.tp1.taglib</uri>
     <tag>
         <name>Hello</name>
-        <tagclass>imt.nordeurope.j2ee.tp.tp1.HelloTag</tagclass>
+        <tagclass>imt.nordeurope.j2ee.tp.tp2.servlets.HelloTag</tagclass>
         <bodycontent>empty</bodycontent>
     </tag>
 </taglib>

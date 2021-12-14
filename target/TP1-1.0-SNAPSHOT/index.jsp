@@ -8,11 +8,11 @@
 <h1>INDEX - CDAW2</h1>
 <h2>Répertoire des TPS</h2>
 <ul>
-    <li><a href="hello-servlet">Hello world (TODO)</a></li>
-    <li><a href="HelloWorldServlet">Hello world JSP</a></li>
-    <li><a href="SimpleWeatherServlet">Simple Weather</a></li>
+    <li><a href="hello">Hello world (TODO)</a></li>
+    <li><a href="HelloWorld">Hello world JSP</a></li>
+    <li><a href="SimpleWeather">Simple Weather</a></li>
     <li><a href="JSPWeather">Weather JSP (TODO)</a></li>
-    <li><a href="GraphicWeatherServlet">Graphic weather</a></li>
+    <li><a href="GraphicWeather">Graphic weather</a></li>
     <li><a href="TagServlet">TAG</a></li>
 </ul>
 
