@@ -4,7 +4,7 @@
 <head><title>Hello World JSP</title></head>
 <body>
 <% if(request.getParameter("nom") == null)
-    out.println("Hello World");
+    out.println("Hello World (JSP)");
 else
     out.println("Bonjour " +
             request.getParameter("nom")); %>

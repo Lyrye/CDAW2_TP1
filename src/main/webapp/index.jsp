@@ -19,7 +19,19 @@
     <button type="submit">OK</button>
 </form>
 <br/>
-<a href="/TP1_war/HelloWorldServlet">Hello world JSP</a>
+<ul>
+    <li><a href="/TP1_war/hello-servlet">Hello world</a></li>
+    <li><a href="/TP1_war/HelloWorldServlet">Hello world JSP</a></li>
+    <li><a href="/TP1_war/GraphicWeatherServlet">Graphic weather</a></li>
+    <li><a href="/TP1_war/TagServlet">TAG</a></li>
+</ul>
+
+<a href="/TP1_war/SimpleWeatherServlet">Simple Weather</a>
+<a href="/TP1_war/JSPWeather">Weather JSP</a>
+
+
+
+
 
 </body>
 </html>

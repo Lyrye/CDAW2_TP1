@@ -7,7 +7,7 @@ import java.io.IOException;
 public class HelloTag extends TagSupport {
     public int doStartTag() throws JspException {
         try {
-            pageContext.getOut().println("Hello World !");
+            pageContext.getOut().println("Hello World ! (TAG)");
         } catch (IOException e) {
             throw new JspException("I/O Error", e);
         }
