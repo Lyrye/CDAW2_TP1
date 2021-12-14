@@ -12,6 +12,6 @@
 </head>
 <body>
     <%@ taglib prefix="helloTagLib" uri="WEB-INF/taglib.tld"%>
-    <helloTagLib:Hello />
+    <helloTagLib:Hello/>
 </body>
 </html>

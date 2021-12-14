@@ -3,6 +3,7 @@ package imt.nordeurope.j2ee.tp.tp1;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
@@ -13,7 +14,7 @@ import java.io.*;
 
 @WebServlet(name = "GraphicWeatherServlet", value = "/GraphicWeatherServlet")
 
-public class GraphicWeatherServlet extends HelloServlet{
+public class GraphicWeatherServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -23,6 +24,10 @@ public class GraphicWeatherServlet extends HelloServlet{
         g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  200,  100));
         g2d.dispose();
         ImageIO.write(bufferedImage,"jpg",response.getOutputStream());
+
+        if(request.getParameter("contry")!= null){
+            //Todo renvoyer le bon graphique en fonction du pays
+        }
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
