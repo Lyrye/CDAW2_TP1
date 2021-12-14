@@ -9,17 +9,29 @@
 <html>
 <head>
     <title>Title</title>
-    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 </head>
-<>
+<body>
     <div id="quote">
         <hr>
         <p>Hello </p>
         <hr/>
     </div>
-    <form>
-        <input type="text" id="name" value="Stephane">
-        <input type="submit" id="replaceContent" value="Refresh local"></input>
-    </form>
+    <input type="text" id="name" value="Stephane">
+    <input type="submit" id="replaceContent" value="Refresh local"></input>
+    <script type="text/Javascript">
+        $(document).ready(function() {
+            $("#replaceContent").click(function() {
+                var name = $("#name").val();
+                $.getJSON("AjaxJson?name=" + name,
+                    function (data) {
+                        console.log(data);
+                        var helloWorldData = data.content;
+                        $("#quote p").html("<p>" + helloWorldData
+                            + "</p>");
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
