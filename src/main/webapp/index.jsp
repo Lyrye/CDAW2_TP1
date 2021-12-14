@@ -2,23 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Température</title>
+    <title>INDEX - CDAW2</title>
 </head>
 <body>
-<br/>
+<h1>INDEX - CDAW2</h1>
+<h2>Répertoire des TPS</h2>
 <ul>
-    <li><a href="hello-servlet">Hello world</a></li>
+    <li><a href="hello-servlet">Hello world (TODO)</a></li>
     <li><a href="HelloWorldServlet">Hello world JSP</a></li>
+    <li><a href="SimpleWeatherServlet">Simple Weather</a></li>
+    <li><a href="JSPWeather">Weather JSP (TODO)</a></li>
     <li><a href="GraphicWeatherServlet">Graphic weather</a></li>
     <li><a href="TagServlet">TAG</a></li>
 </ul>
-<br/>
-<h2>TODO</h2>
-<a href="SimpleWeatherServlet">Simple Weather</a>
-<a href="JSPWeather">Weather JSP</a>
 
-
-
+<h2>Auteurs</h2>
+<p>Guillaume CEUNINCK, Lila NICKLER, Benjamin LEROUX</p>
 
 
 </body>
