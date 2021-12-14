@@ -21,13 +21,30 @@ public class GraphicWeatherServlet extends HttpServlet {
         response.setContentType("image/jpeg");
         BufferedImage  bufferedImage  =  new  BufferedImage(200,  200, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d  =  bufferedImage.createGraphics();
-        g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  200,  100));
         g2d.dispose();
         ImageIO.write(bufferedImage,"jpg",response.getOutputStream());
 
         if(request.getParameter("contry")!= null){
-            //Todo renvoyer le bon graphique en fonction du pays
-        }
+            String country = request.getParameter("contry");
+            switch(country){
+                case "France":
+                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  200,  100));
+
+                    break;
+                case "Germany":
+                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  100,  100));
+
+                    break;
+                case "USA":
+                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  200,  200));
+
+                    break;
+                case "England":
+                    g2d.setColor(Color.red); g2d.fill(new  Ellipse2D.Float(0,  0,  400,  100));
+                    break;
+                default:
+                    break;
+            }        }
     }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
