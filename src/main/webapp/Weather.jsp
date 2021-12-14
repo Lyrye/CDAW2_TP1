@@ -4,7 +4,7 @@
     <title>JSP - Température</title>
 </head>
 <body>
-<h1>Température</h1>
+<h1>Température JSP</h1>
 <br/>
 
 </body>
