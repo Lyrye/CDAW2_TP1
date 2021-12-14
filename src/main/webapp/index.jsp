@@ -25,7 +25,8 @@
     <li><a href="/TP1_war/GraphicWeatherServlet">Graphic weather</a></li>
     <li><a href="/TP1_war/TagServlet">TAG</a></li>
 </ul>
-
+<br/>
+<h2>TODO</h2>
 <a href="/TP1_war/SimpleWeatherServlet">Simple Weather</a>
 <a href="/TP1_war/JSPWeather">Weather JSP</a>
 
