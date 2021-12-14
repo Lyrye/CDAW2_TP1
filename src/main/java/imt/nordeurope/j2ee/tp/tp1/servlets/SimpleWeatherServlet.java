@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp1;
+package imt.nordeurope.j2ee.tp.tp1.servlets;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet(name = "SimpleWeatherServlet", value = "/SimpleWeatherServlet")
+@WebServlet(name = "SimpleWeather", value = "/SimpleWeather")
 
 public class SimpleWeatherServlet extends HttpServlet {
 
@@ -41,7 +41,7 @@ public class SimpleWeatherServlet extends HttpServlet {
                     isSelected = Arrays.asList("", "", "selected", "");
                     break;
                 case "England":
-                    degree = "13";
+                    degree = "5";
                     isSelected = Arrays.asList("", "", "", "selected");
                     break;
                 default:
@@ -51,7 +51,7 @@ public class SimpleWeatherServlet extends HttpServlet {
             writer.println("<body>\n" +
                     "<h1>Température</h1>\n" +
                     "<br/>" +
-                    "<form methode='Get' action='SimpleWeatherServlet'>\n" +
+                    "<form methode='Get' action='SimpleWeather'>\n" +
                     "        <label for=\"country-select\">Choose a country:</label>\n" +
                     "        <select name=\"country\" id=\"country-select\">\n" +
                     "            <option value=\"\">--Choisisez un pays--</option>\n" +
@@ -63,7 +63,7 @@ public class SimpleWeatherServlet extends HttpServlet {
                     "        <button type=\"submit\">OK</button>\n" +
                     "    </form>");
             if(isSelected.contains("selected")){
-                img = "GraphicWeatherServlet?country="+country;
+                img = "GraphicWeather?country="+country;
                 writer.println("<p style=\"float:left;\">La température en " + country + " est de : " + degree + " degrés.</p></body>");
                 writer.println("<div style=\"clear:both\"></div>");
                 writer.println("<img style=\"float:left;\" src=\""+img+"\">");
@@ -77,7 +77,7 @@ public class SimpleWeatherServlet extends HttpServlet {
             writer.println("<body>\n" +
                     "<h1>Température</h1>\n" +
                     "<br/>" +
-                    "<form methode='Get' action='SimpleWeatherServlet'>\n" +
+                    "<form methode='Get' action='SimpleWeather'>\n" +
                     "        <label for=\"country-select\">Choose a country:</label>\n" +
                     "        <select name=\"country\" id=\"country-select\">\n" +
                     "            <option value=\"\">--Choisisez un pays--</option>\n" +
@@ -98,4 +98,6 @@ public class SimpleWeatherServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+
 }

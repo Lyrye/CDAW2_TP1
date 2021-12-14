@@ -1,11 +1,11 @@
-package imt.nordeurope.j2ee.tp.tp1;
+package imt.nordeurope.j2ee.tp.tp1.servlets;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "HelloWorldServlet", value = "/HelloWorldServlet")
+@WebServlet(name = "HelloWorld", value = "/HelloWorld")
 public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

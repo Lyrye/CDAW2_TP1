@@ -1,10 +1,10 @@
-package imt.nordeurope.j2ee.tp.tp1;
+package imt.nordeurope.j2ee.tp.tp1.servlets;
 
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "hello", value = "/hello")
 public class HelloServlet extends HttpServlet {
     private String message;
 
