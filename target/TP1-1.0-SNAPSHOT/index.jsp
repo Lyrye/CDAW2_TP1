@@ -18,6 +18,8 @@
     </select>
     <button type="submit">OK</button>
 </form>
+<br/>
+<a href="/TP1_war/HelloWorldServlet">Hello world JSP</a>
 
 </body>
 </html>
