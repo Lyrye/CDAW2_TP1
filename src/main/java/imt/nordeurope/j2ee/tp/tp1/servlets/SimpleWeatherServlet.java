@@ -25,23 +25,28 @@ public class SimpleWeatherServlet extends HttpServlet {
         if(request.getParameter("country")!=null){
             String country = request.getParameter("country");
             String degree = "";
+            String countryLabel = "";
             List<String> isSelected = new ArrayList<>();
             String img = "";
             switch(country){
                 case "France":
                     degree = "10";
+                    countryLabel = "France";
                     isSelected = Arrays.asList("selected", "", "", "");
                     break;
                 case "Germany":
                     degree = "11";
+                    countryLabel = "Allemagne";
                     isSelected = Arrays.asList("", "selected", "", "");
                     break;
                 case "USA":
                     degree = "12";
+                    countryLabel = "USA";
                     isSelected = Arrays.asList("", "", "selected", "");
                     break;
                 case "England":
                     degree = "5";
+                    countryLabel = "Angleterre";
                     isSelected = Arrays.asList("", "", "", "selected");
                     break;
                 default:
@@ -64,7 +69,7 @@ public class SimpleWeatherServlet extends HttpServlet {
                     "    </form>");
             if(isSelected.contains("selected")){
                 img = "GraphicWeather?country="+country;
-                writer.println("<p style=\"float:left;\">La température en " + country + " est de : " + degree + " degrés.</p></body>");
+                writer.println("<p style=\"float:left;\">La température en " + countryLabel + " est de : " + degree + " degrés.</p></body>");
                 writer.println("<div style=\"clear:both\"></div>");
                 writer.println("<img style=\"float:left;\" src=\""+img+"\">");
             }else {

@@ -11,9 +11,9 @@
     <select name=\"country\" id=\"country-select\">
         <option value=\"\">--Choisisez un pays--</option>
         <option value=\"France\">France</option>
-        <option value=\"Germany\">Allemagne</option>
+        <option value=\"Germany\">Germany</option>
         <option value=\"USA\">USA</option>
-        <option value=\"England\">Angleterre</option>
+        <option value=\"England\">England</option>
     </select>
     <button type=\"submit\">OK</button>
     <br/>
