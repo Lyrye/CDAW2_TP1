@@ -5,6 +5,7 @@ public class WeatherBean {
     private String capital;
     private float temperature;
     private String country;
+    private String linkToTempGraph;
 
     public String getCapital() {
         return capital;
@@ -29,4 +30,5 @@ public class WeatherBean {
     public void setCountry(String country) {
         this.country = country;
     }
+
 }
