@@ -10,15 +10,15 @@
 <form methode='Get' action='JSPWeather'>
     <label for="country-select">Choose a country:</label>
     <select name="country" id="country-select">
-        <option  <% if(request.getParameter("country")==null) out.println("selected");%> value="">--Choisisez un pays--</option>
-        <option <% if(request.getParameter("country").equals("France")) out.println("selected");%> value="France">France</option>
-        <option <% if (request.getParameter("country").equals("Germany")) out.println("selected");%> value="Germany">Allemagne</option>
-        <option <% if(request.getParameter("country").equals("USA")) out.println("selected");%> value="USA">USA</option>
-        <option <% if(request.getParameter("country").equals("England")) out.println("selected");%> value="England">Angleterre</option>
+        <option <% if(request.getParameter("country")==null) out.println("selected");%> disabled value="">--Choisisez un pays--</option>
+        <option  ${weatherBean.country == "France" ? 'selected' : ''}  value="France">France</option>
+        <option ${weatherBean.country == "Gernamy" ? 'selected' : ''} value="Germany">Allemagne</option>
+        <option ${weatherBean.country == "USA" ? 'selected' : ''} value="USA">Etats-Unis</option>
+        <option ${weatherBean.country == "England" ? 'selected' : ''} value="England">Angleterre</option>
     </select>
     <button type="submit">OK</button>
     <br/>
-    <h3>TODO</h3>
+    <p style="float:left;" ${weatherBean == null ? 'hidden' : ''}>La température en ${weatherBean.country}  est de : ${weatherBean.temperature} degrés.</p>
 </form>
 </body>
 </html>
