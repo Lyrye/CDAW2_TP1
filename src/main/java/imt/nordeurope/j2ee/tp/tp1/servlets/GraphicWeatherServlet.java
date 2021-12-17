@@ -21,8 +21,8 @@ public class GraphicWeatherServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("image/jpg");
 
+        response.setContentType("image/jpg");
         BufferedImage  bufferedImage  =  new  BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d  =  bufferedImage.createGraphics();
         g2d.setColor(Color.WHITE);
@@ -46,7 +46,6 @@ public class GraphicWeatherServlet extends HttpServlet {
                     temp = new int[]{0, 3, 0, 1, 0, 5, 0, 1, 2,5 };
                     break;
                 default:
-
                     break;
             }
             g2d.setColor(Color.BLACK);

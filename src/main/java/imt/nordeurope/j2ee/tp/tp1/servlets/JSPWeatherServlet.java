@@ -15,6 +15,8 @@ public class JSPWeatherServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Weather.jsp");
         requestDispatcher.forward(request, response);
     }
