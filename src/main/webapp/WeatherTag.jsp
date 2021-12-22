@@ -7,7 +7,7 @@
 <body>
 <h1>Température JSP - Tag</h1>
 <br/>
-<form methode='Get' action='JSPWeather'>
+<form methode='Get' action='TagLibMultiLanguageWeather'>
     <label for="country-select">Choissisez un pays:</label>
     <select name="country" id="country-select">
         <option ${weatherBean == null ? 'selected' : ''} disabled value="">--Choisisez un pays--</option>
@@ -19,6 +19,7 @@
     <button type="submit">OK</button>
     <br/>
 </form>
+${Locale locale = new Locale("fr","FR")}
 <p style="float:left;" ${weatherBean == null ? 'hidden' : ''}>La température à ${weatherBean.capital} en ${weatherBean.country}  est de : ${weatherBean.temperature} degrés.</p>
 <div style="clear:both"></div>
 <img style="float:left" src="GraphicWeather?country=<%out.println(request.getParameter("country"));%>" ${weatherBean == null ? 'hidden' : ''}>
