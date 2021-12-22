@@ -1,7 +1,8 @@
 package imt.nordeurope.j2ee.tp.tp1.servlets.beans;
 
-public class WeatherBean {
+import javax.servlet.jsp.tagext.TagSupport;
 
+public class I18NWeather extends TagSupport {
     private String capital;
     private float temperature;
     private String country;
@@ -32,4 +33,11 @@ public class WeatherBean {
         this.country = country;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
 }
