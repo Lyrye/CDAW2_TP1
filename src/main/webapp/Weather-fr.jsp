@@ -4,20 +4,22 @@
     <title>JSP - Température</title>
 </head>
 <body>
-<h1>Température JSP</h1>
+<h1>Température JSP (FR)</h1>
 <br/>
-<form methode='Get' action='SimpleWeather'>
-    <label for=\"country-select\">Choose a country:</label>
-    <select name=\"country\" id=\"country-select\">
-        <option value=\"\">--Choisisez un pays--</option>
-        <option value=\"France\">France</option>
-        <option value=\"Germany\">Allemagne</option>
-        <option value=\"USA\">USA</option>
-        <option value=\"England\">Angleterre</option>
+<form methode='Get' action='JSPMultiLanguageWeather'>
+    <label for="country-select">Choissisez un pays:</label>
+    <select name="country" id="country-select">
+        <option ${weatherBean == null ? 'selected' : ''} disabled value="">--Choisisez un pays--</option>
+        <option  ${weatherBean.country == "France" ? 'selected' : ''}  value="France">France</option>
+        <option ${weatherBean.country == "Allemagne" ? 'selected' : ''} value="Germany">Allemagne</option>
+        <option ${weatherBean.country == "Etats-Unis" ? 'selected' : ''} value="USA">Etats-Unis</option>
+        <option ${weatherBean.country == "Angleterre" ? 'selected' : ''} value="England">Angleterre</option>
     </select>
-    <button type=\"submit\">OK</button>
+    <button type="submit">OK</button>
     <br/>
-    <h3>TODO</h3>
 </form>
+<p style="float:left;" ${weatherBean == null ? 'hidden' : ''}>La température à ${weatherBean.capital} en ${weatherBean.country}  est de : ${weatherBean.temperature} degrés.</p>
+<div style="clear:both"></div>
+<img style="float:left" src="GraphicWeather?country=<%out.println(request.getParameter("country"));%>" ${weatherBean == null ? 'hidden' : ''}>
 </body>
 </html>

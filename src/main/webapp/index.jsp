@@ -11,7 +11,8 @@
     <li><a href="hello">Hello world</a></li>
     <li><a href="HelloWorld">Hello world JSP</a></li>
     <li><a href="SimpleWeather">Simple Weather</a></li>
-    <li><a href="JSPWeather">Weather JSP (TODO)</a></li>
+    <li><a href="JSPWeather">Weather JSP</a></li>
+    <li><a href="JSPMultiLanguageWeather">Weather JSP - Multiple language</a></li>
     <li><a href="Tag">TAG</a></li>
     <li><a href="Main">Main</a></li>
 </ul>

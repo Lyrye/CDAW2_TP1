@@ -1,5 +1,7 @@
 package imt.nordeurope.j2ee.tp.tp3.servlets;
 
+import imt.nordeurope.j2ee.tp.tp1.servlets.beans.WeatherBean;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,58 @@ public class JSPMultiLanguageWeatherServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Weather.jsp");
+        String language = "default";
+        if (request.getParameter("country") != null) {
+
+            String country = request.getParameter("country");
+            WeatherBean weatherBean = new WeatherBean();
+            switch (country) {
+                case "France":
+                    weatherBean.setTemperature(10);
+                    weatherBean.setCountry("France");
+                    weatherBean.setCapital("Paris");
+                    language = "fr";
+                    break;
+                case "Germany":
+                    weatherBean.setTemperature(8);
+                    weatherBean.setCountry("Allemagne");
+                    weatherBean.setCapital("Berlin");
+                    break;
+                case "USA":
+                    weatherBean.setTemperature(15);
+                    weatherBean.setCountry("Etats-Unis");
+                    weatherBean.setCapital("Washington");
+                    language = "en";
+                    break;
+                case "England":
+                    weatherBean.setTemperature(10);
+                    weatherBean.setCountry("Angleterre");
+                    weatherBean.setCapital("Londres");
+                    language = "en";
+                    break;
+                default:
+                    weatherBean.setTemperature(0);
+                    weatherBean.setCountry("Pas de pays sélectionné");
+                    weatherBean.setCapital("Pas de pays sélectionné");
+                    break;
+            }
+            request.setAttribute("weatherBean", weatherBean);
+        }
+
+        RequestDispatcher requestDispatcher;
+
+        switch (language) {
+            case "fr":
+                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-fr.jsp");
+                break;
+            case "en":
+                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-en.jsp");
+                break;
+            default:
+                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-en.jsp");
+                break;
+        }
+
         requestDispatcher.forward(request, response);
     }
 
