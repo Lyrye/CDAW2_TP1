@@ -1,6 +1,7 @@
 package imt.nordeurope.j2ee.tp.tp3.servlets;
 
 import imt.nordeurope.j2ee.tp.tp1.servlets.beans.*;
+import imt.nordeurope.j2ee.tp.tp3.tag.I18NWeather;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -45,7 +46,15 @@ public class TagLibMultiLanguageWeatherServlet extends HttpServlet {
             request.setAttribute("weatherBean", weatherBean);
         }
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/TagLibMultiLanguageWeather.jsp");
+        I18NWeather i18NWeatherBean = new I18NWeather();
+        String language = "en";
+        if (request.getParameter("lang") != null){
+            language = request.getParameter("lang");
+        }
+        i18NWeatherBean.setLang(language);
+        request.setAttribute("i18NWeatherBean", i18NWeatherBean);
+
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/WeatherTag.jsp");
         requestDispatcher.forward(request, response);
     }
 

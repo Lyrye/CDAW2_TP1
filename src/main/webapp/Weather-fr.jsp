@@ -10,7 +10,7 @@
     <label for="country-select">Choissisez un pays:</label>
     <select name="country" id="country-select">
         <option ${weatherBean == null ? 'selected' : ''} disabled value="">--Choisisez un pays--</option>
-        <option  ${weatherBean.country == "France" ? 'selected' : ''}  value="France">France</option>
+        <option ${weatherBean.country == "France" ? 'selected' : ''}  value="France">France</option>
         <option ${weatherBean.country == "Allemagne" ? 'selected' : ''} value="Germany">Allemagne</option>
         <option ${weatherBean.country == "Etats-Unis" ? 'selected' : ''} value="USA">Etats-Unis</option>
         <option ${weatherBean.country == "Angleterre" ? 'selected' : ''} value="England">Angleterre</option>

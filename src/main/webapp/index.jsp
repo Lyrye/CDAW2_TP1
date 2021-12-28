@@ -14,7 +14,8 @@
     <li><a href="JSPWeather">Weather JSP</a></li>
     <li><a href="JSPMultiLanguageWeather">Weather JSP - Multiple language</a></li>
     <li><a href="Tag">TAG</a></li>
-    <li><a href="Main">Main</a></li>
+    <li><a href="Main">Ajax</a></li>
+    <li><a href="TagLibMultiLanguageWeather">Weather TagLib - Multiple language</a></li>
 </ul>
 
 <h2>Auteurs</h2>

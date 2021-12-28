@@ -5,8 +5,13 @@
          version="4.0">
 
     <jsp-config>
-        <taglib> <taglib-uri>org.mines.douai.taglib</taglib-uri>
+        <taglib>
+            <taglib-uri>org.mines.douai.taglib</taglib-uri>
             <taglib-location>/WEB-INF/taglib.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>org.mines.douai.taglib.tp3</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/tp3.tld</taglib-location>
         </taglib>
     </jsp-config>
 </web-app>
