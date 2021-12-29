@@ -31,5 +31,11 @@
 <p style="float:left;" ${weatherBean == null ? 'hidden' : ''}>La température à ${weatherBean.capital} en ${weatherBean.country}  est de : ${weatherBean.temperature} degrés.</p>
 <div style="clear:both"></div>
 <img style="float:left" src="GraphicWeather?country=<%out.println(request.getParameter("country"));%>" ${weatherBean == null ? 'hidden' : ''}>
+<br/>
+<h3>Langues</h3>
+<ul>
+    <li><a href="TagLibMultiLanguageWeather?lang=fr">FR</a></li>
+    <li><a href="TagLibMultiLanguageWeather?lang=en">EN</a></li>
+</ul>
 </body>
 </html>
