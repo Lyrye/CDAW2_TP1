@@ -17,7 +17,7 @@
 %>
 
 <form methode='Get' action='TagLibMultiLanguageWeather'>
-    <label for="country-select">Choissisez un pays:</label>
+    <label for="country-select"><%=resources.getString("SelectLabel")%></label>
     <select name="country" id="country-select">
         <option ${weatherBean == null ? 'selected' : ''} disabled value=""><%=resources.getString("Select")%></option>
         <option ${weatherBean.country == "France" ? 'selected' : ''}  value="France"><%=resources.getString("France")%></option>

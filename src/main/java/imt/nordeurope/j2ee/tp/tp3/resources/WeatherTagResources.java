@@ -8,6 +8,7 @@ public class WeatherTagResources extends ResourceBundle {
 
     @Override
     protected Object handleGetObject(String key) {
+        if (key.equals("SelectLabel")) return "Choose one country";
         if (key.equals("Select")) return "--Choose one country--";
         if (key.equals("France")) return "France";
         if (key.equals("Allemagne")) return "Germany";
