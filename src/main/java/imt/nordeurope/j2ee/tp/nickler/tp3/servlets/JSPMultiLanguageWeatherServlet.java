@@ -1,6 +1,6 @@
-package imt.nordeurope.j2ee.tp.tp1.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp3.servlets;
 
-import imt.nordeurope.j2ee.tp.tp1.servlets.beans.WeatherBean;
+import imt.nordeurope.j2ee.tp.nickler.tp1.servlets.beans.WeatherBean;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,14 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Arrays;
 
-@WebServlet(name = "JSPWeatherServlet", value = "/JSPWeather")
 
-public class JSPWeatherServlet extends HttpServlet {
+@WebServlet(name = "JSPMultiLanguageWeather", value = "/JSPMultiLanguageWeather")
+
+public class JSPMultiLanguageWeatherServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String language = "default";
         if (request.getParameter("country") != null) {
 
             String country = request.getParameter("country");
@@ -26,6 +27,7 @@ public class JSPWeatherServlet extends HttpServlet {
                     weatherBean.setTemperature(10);
                     weatherBean.setCountry("France");
                     weatherBean.setCapital("Paris");
+                    language = "fr";
                     break;
                 case "Germany":
                     weatherBean.setTemperature(8);
@@ -36,11 +38,13 @@ public class JSPWeatherServlet extends HttpServlet {
                     weatherBean.setTemperature(15);
                     weatherBean.setCountry("Etats-Unis");
                     weatherBean.setCapital("Washington");
+                    language = "en";
                     break;
                 case "England":
                     weatherBean.setTemperature(10);
                     weatherBean.setCountry("Angleterre");
                     weatherBean.setCapital("Londres");
+                    language = "en";
                     break;
                 default:
                     weatherBean.setTemperature(0);
@@ -51,13 +55,25 @@ public class JSPWeatherServlet extends HttpServlet {
             request.setAttribute("weatherBean", weatherBean);
         }
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Weather.jsp");
+        RequestDispatcher requestDispatcher;
+
+        switch (language) {
+            case "fr":
+                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-fr.jsp");
+                break;
+            case "en":
+                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-en.jsp");
+                break;
+            default:
+                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-en.jsp");
+                break;
+        }
+
         requestDispatcher.forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
-            ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }

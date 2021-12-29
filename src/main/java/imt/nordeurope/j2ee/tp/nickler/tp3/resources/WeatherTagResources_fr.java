@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp3.resources;
+package imt.nordeurope.j2ee.tp.nickler.tp3.resources;
 
 public class WeatherTagResources_fr extends WeatherTagResources{
 

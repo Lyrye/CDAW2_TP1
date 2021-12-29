@@ -1,23 +1,18 @@
-package imt.nordeurope.j2ee.tp.tp3.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp3.servlets;
 
-import imt.nordeurope.j2ee.tp.tp1.servlets.beans.WeatherBean;
+import imt.nordeurope.j2ee.tp.nickler.tp1.servlets.beans.WeatherBean;
+import imt.nordeurope.j2ee.tp.nickler.tp3.tag.I18NWeather;
+import imt.nordeurope.j2ee.tp.nickler.tp1.servlets.beans.*;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 
-
-@WebServlet(name = "JSPMultiLanguageWeather", value = "/JSPMultiLanguageWeather")
-
-public class JSPMultiLanguageWeatherServlet extends HttpServlet {
-
+@WebServlet(name = "TagLibMultiLanguageWeather", value = "/TagLibMultiLanguageWeather")
+public class TagLibMultiLanguageWeatherServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String language = "default";
         if (request.getParameter("country") != null) {
 
             String country = request.getParameter("country");
@@ -27,7 +22,6 @@ public class JSPMultiLanguageWeatherServlet extends HttpServlet {
                     weatherBean.setTemperature(10);
                     weatherBean.setCountry("France");
                     weatherBean.setCapital("Paris");
-                    language = "fr";
                     break;
                 case "Germany":
                     weatherBean.setTemperature(8);
@@ -38,13 +32,11 @@ public class JSPMultiLanguageWeatherServlet extends HttpServlet {
                     weatherBean.setTemperature(15);
                     weatherBean.setCountry("Etats-Unis");
                     weatherBean.setCapital("Washington");
-                    language = "en";
                     break;
                 case "England":
                     weatherBean.setTemperature(10);
                     weatherBean.setCountry("Angleterre");
                     weatherBean.setCapital("Londres");
-                    language = "en";
                     break;
                 default:
                     weatherBean.setTemperature(0);
@@ -55,20 +47,15 @@ public class JSPMultiLanguageWeatherServlet extends HttpServlet {
             request.setAttribute("weatherBean", weatherBean);
         }
 
-        RequestDispatcher requestDispatcher;
-
-        switch (language) {
-            case "fr":
-                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-fr.jsp");
-                break;
-            case "en":
-                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-en.jsp");
-                break;
-            default:
-                requestDispatcher = getServletContext().getRequestDispatcher("/Weather-en.jsp");
-                break;
+        I18NWeather i18NWeatherBean = new I18NWeather();
+        String language = "en";
+        if (request.getParameter("lang") != null){
+            language = request.getParameter("lang");
         }
+        i18NWeatherBean.setLang(language);
+        request.setAttribute("i18NWeatherBean", i18NWeatherBean);
 
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/WeatherTag.jsp");
         requestDispatcher.forward(request, response);
     }
 

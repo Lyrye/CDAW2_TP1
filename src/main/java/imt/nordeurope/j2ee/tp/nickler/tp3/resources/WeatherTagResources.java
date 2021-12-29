@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp3.resources;
+package imt.nordeurope.j2ee.tp.nickler.tp3.resources;
 
 import java.util.Collections;
 import java.util.Enumeration;

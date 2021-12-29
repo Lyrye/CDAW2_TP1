@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp3.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp3.servlets;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;

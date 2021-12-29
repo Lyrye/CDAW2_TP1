@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp1.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp1.servlets;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;

@@ -1,15 +1,19 @@
-package imt.nordeurope.j2ee.tp.tp3.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp1.servlets;
 
-import imt.nordeurope.j2ee.tp.tp1.servlets.beans.*;
-import imt.nordeurope.j2ee.tp.tp3.tag.I18NWeather;
+import imt.nordeurope.j2ee.tp.nickler.tp1.servlets.beans.WeatherBean;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "TagLibMultiLanguageWeather", value = "/TagLibMultiLanguageWeather")
-public class TagLibMultiLanguageWeatherServlet extends HttpServlet {
+@WebServlet(name = "JSPWeatherServlet", value = "/JSPWeather")
+
+public class JSPWeatherServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getParameter("country") != null) {
@@ -46,20 +50,13 @@ public class TagLibMultiLanguageWeatherServlet extends HttpServlet {
             request.setAttribute("weatherBean", weatherBean);
         }
 
-        I18NWeather i18NWeatherBean = new I18NWeather();
-        String language = "en";
-        if (request.getParameter("lang") != null){
-            language = request.getParameter("lang");
-        }
-        i18NWeatherBean.setLang(language);
-        request.setAttribute("i18NWeatherBean", i18NWeatherBean);
-
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/WeatherTag.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/Weather.jsp");
         requestDispatcher.forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
 
     }
 }

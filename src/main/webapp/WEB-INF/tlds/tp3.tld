@@ -5,10 +5,10 @@
     <tlib-version>2.0</tlib-version>
     <jsp-version>2.0</jsp-version>
     <short-name>i18nWeather</short-name>
-    <uri>imt.nordeurope.j2ee.tp.tp1.taglib</uri>
+    <uri>imt.nordeurope.j2ee.tp.nickler.tp1.taglib</uri>
     <tag>
         <name>i18nWeather</name>
-        <tagclass>imt.nordeurope.j2ee.tp.tp3.servlets.TagLibMultiLanguageWeather</tagclass>
+        <tagclass>imt.nordeurope.j2ee.tp.nickler.tp3.servlets.TagLibMultiLanguageWeather</tagclass>
         <bodycontent>empty</bodycontent>
 
         <attribute>

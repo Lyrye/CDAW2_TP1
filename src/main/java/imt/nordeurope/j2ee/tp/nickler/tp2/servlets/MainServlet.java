@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp2.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp2.servlets;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

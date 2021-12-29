@@ -5,11 +5,10 @@
     <tlib-version>2.0</tlib-version>
     <jsp-version>2.0</jsp-version>
     <short-name>HelloWorld</short-name>
-    <uri>imt.nordeurope.j2ee.tp.tp1.taglib</uri>
+    <uri>imt.nordeurope.j2ee.tp.nickler.tp1.taglib</uri>
     <tag>
         <name>Hello</name>
-        <tagclass>imt.nordeurope.j2ee.tp.tp2.servlets.HelloTag</tagclass>
+        <tagclass>imt.nordeurope.j2ee.tp.nickler.tp2.servlets.HelloTag</tagclass>
         <bodycontent>empty</bodycontent>
-        <tag-class/>
     </tag>
 </taglib>

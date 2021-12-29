@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp3.tag;
+package imt.nordeurope.j2ee.tp.nickler.tp3.tag;
 
 import javax.servlet.jsp.tagext.TagSupport;
 

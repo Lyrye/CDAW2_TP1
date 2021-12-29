@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp1.servlets.beans;
+package imt.nordeurope.j2ee.tp.nickler.tp1.servlets.beans;
 
 public class WeatherBean {
 

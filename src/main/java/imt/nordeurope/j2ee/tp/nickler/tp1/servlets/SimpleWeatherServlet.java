@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp1.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp1.servlets;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -53,10 +53,13 @@ public class SimpleWeatherServlet extends HttpServlet {
                     isSelected = Arrays.asList("", "", "", "");
                     break;
             }
-            writer.println("<body>\n" +
+            writer.println("<!DOCTYPE html><html><head>" +
+                    "    <title>Hello</title>" +
+                    "</head><body>");
+            writer.println(
                     "<h1>Température</h1>\n" +
                     "<br/>" +
-                    "<form methode='Get' action='SimpleWeather'>\n" +
+                    "<form method='get' action='SimpleWeather'>\n" +
                     "        <label for=\"country-select\">Choose a country:</label>\n" +
                     "        <select name=\"country\" id=\"country-select\">\n" +
                     "            <option value=\"\">--Choisisez un pays--</option>\n" +
@@ -79,10 +82,13 @@ public class SimpleWeatherServlet extends HttpServlet {
 
 
         } else {
-            writer.println("<body>\n" +
+            writer.println("<!DOCTYPE html><html><head>" +
+                    "    <title>Hello</title>" +
+                    "</head><body>");
+            writer.println(
                     "<h1>Température</h1>\n" +
                     "<br/>" +
-                    "<form methode='Get' action='SimpleWeather'>\n" +
+                    "<form method='get' action='SimpleWeather'>\n" +
                     "        <label for=\"country-select\">Choose a country:</label>\n" +
                     "        <select name=\"country\" id=\"country-select\">\n" +
                     "            <option value=\"\">--Choisisez un pays--</option>\n" +

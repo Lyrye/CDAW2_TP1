@@ -1,4 +1,4 @@
-package imt.nordeurope.j2ee.tp.tp1.servlets;
+package imt.nordeurope.j2ee.tp.nickler.tp1.servlets;
 
 import java.io.*;
 import javax.servlet.http.*;
@@ -17,7 +17,9 @@ public class HelloServlet extends HttpServlet {
 
         // Hello
         PrintWriter out = response.getWriter();
-        out.println("<html><body>");
+        out.println("<!DOCTYPE html><html><head>" +
+                "    <title>Hello</title>" +
+                "</head><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
     }

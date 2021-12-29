@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
         <title>JSP - Temperature (EN)</title>
@@ -6,7 +7,7 @@
 <body>
 <h1>JSP - Temperature (EN)</h1>
 <br/>
-<form methode='Get' action='JSPMultiLanguageWeather'>
+<form method="get" action='JSPMultiLanguageWeather'>
     <label for="country-select">Choose one country:</label>
     <select name="country" id="country-select">
         <option ${weatherBean == null ? 'selected' : ''} disabled value="">--Choose one country--</option>
@@ -20,6 +21,6 @@
 </form>
 <p style="float:left;" ${weatherBean == null ? 'hidden' : ''}>The temperature at ${weatherBean.capital} in ${weatherBean.country}  is : ${weatherBean.temperature} degrees.</p>
 <div style="clear:both"></div>
-<img style="float:left" src="GraphicWeather?country=<%out.println(request.getParameter("country"));%>" ${weatherBean == null ? 'hidden' : ''}>
+<img style="float:left" src="GraphicWeather?country=<%out.print(request.getParameter("country"));%>" ${weatherBean == null ? 'hidden' : ''}>
 </body>
 </html>
