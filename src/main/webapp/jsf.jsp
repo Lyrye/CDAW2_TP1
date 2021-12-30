@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
+<f:view>
 <html>
 <head>
     <title>Title</title>
@@ -19,3 +20,4 @@
     </h:selectOneListbox>
 </body>
 </html>
+</f:view>
