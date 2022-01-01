@@ -16,7 +16,7 @@
     Locale currentLocale = new Locale(i18NWeatherBean.getLang());
     ResourceBundle resources = ResourceBundle.getBundle("imt.nordeurope.j2ee.tp.nickler.tp3.resources.WeatherTagResources", currentLocale);
 %>
-
+<h1>test</h1>
 <form method='get' action='TagLibMultiLanguageWeather'>
     <label for="country-select"><%=resources.getString("SelectLabel")%></label>
     <select name="country" id="country-select">
@@ -29,7 +29,9 @@
     <button type="submit">OK</button>
     <br/>
 </form>
-<p style="float:left;" ${weatherBean == null ? 'hidden' : ''}>La température à ${weatherBean.capital} en ${weatherBean.country}  est de : ${weatherBean.temperature} degrés.</p>
+<h1>test2</h1>
+<p><%out.println(request.getParameter("lang"));%></p>
+<p style="float:left;" ${weatherBean == null ? 'hidden' : ''}><%=resources.getString("sentencePart1")%> ${weatherBean.capital} <%=resources.getString("sentencePart2")%> ${weatherBean.country} <%=resources.getString("sentencePart3")%> ${weatherBean.temperature}<%=resources.getString("sentencePart4")%></p>
 <div style="clear:both"></div>
 <img style="float:left" src="GraphicWeather?country=<%out.print(request.getParameter("country"));%>" ${weatherBean == null ? 'hidden' : ''}>
 <br/>

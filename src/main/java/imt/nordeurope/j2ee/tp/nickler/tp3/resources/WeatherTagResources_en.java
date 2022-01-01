@@ -9,6 +9,10 @@ public class WeatherTagResources_en extends WeatherTagResources{
         if (key.equals("Allemagne")) return "Germany";
         if (key.equals("Etats-Unis")) return "USA";
         if (key.equals("Angleterre")) return "England";
+        if (key.equals("sentencePart1")) return "The temperature at";
+        if (key.equals("sentencePart2")) return "in";
+        if (key.equals("sentencePart3")) return "is";
+        if (key.equals("sentencePart4")) return "degrees";
         return null;
     }
 }
