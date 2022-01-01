@@ -9,6 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <f:view>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Title</title>
@@ -17,13 +18,20 @@
 <h:form>
     <h:selectOneListbox value = "#{WeatherBean.country}">
         <f:selectItem itemValue = "France" itemLabel = "France" />
-        <f:selectItem itemValue = "Germany" itemLabel = "Allemagne" />
-        <f:selectItem itemValue = "USA" itemLabel = "Etats-Unis" />
-        <f:selectItem itemValue = "England" itemLabel = "Angleterre" />
+        <f:selectItem itemValue = "Germany" itemLabel = "Germany" />
+        <f:selectItem itemValue = "USA" itemLabel = "USA" />
+        <f:selectItem itemValue = "England" itemLabel = "England" />
     </h:selectOneListbox>
     <h:commandButton type="submit"/>
 </h:form>
-    <h:graphicImage value="GraphicWeather?country=#{WeatherBean.country}"/>
+<h:outputText value="Here is the temperature graphic in "/>
+<h:outputText value="#{WeatherBean.country}"/>
+<h:outputText value=" at "/>
+<h:outputText value="#{WeatherBean.time}"/>
+<br>
+
+
+<h:graphicImage value="GraphicWeather?country=#{WeatherBean.country}"/>
 </body>
 </html>
 </f:view>

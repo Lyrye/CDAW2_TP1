@@ -16,6 +16,7 @@
     <li><a href="Tag">TAG</a></li>
     <li><a href="Main">Ajax</a></li>
     <li><a href="TagLibMultiLanguageWeather">Weather TagLib - Multiple language</a></li>
+    <li><a href="faces/jsf.jsp">Java Server Faces</a></li>
 </ul>
 
 <h2>Auteurs</h2>

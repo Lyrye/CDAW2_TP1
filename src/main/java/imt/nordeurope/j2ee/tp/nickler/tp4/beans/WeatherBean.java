@@ -1,6 +1,9 @@
 package imt.nordeurope.j2ee.tp.nickler.tp4.beans;
 
 import javax.faces.model.SelectItem;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.List;
 
 public class WeatherBean {
@@ -10,7 +13,11 @@ public class WeatherBean {
     private List<SelectItem> countryList;
 
     public String getTime() {
-        return time;
+        return new SimpleDateFormat("HH:mm").format(Calendar.getInstance().getTime());
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getCountry() {
