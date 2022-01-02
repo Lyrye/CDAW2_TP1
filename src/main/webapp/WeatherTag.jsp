@@ -13,7 +13,14 @@
 <br/>
 <%@ taglib prefix="i18nWeatherTagLib" uri="WEB-INF/tlds/tp3.tld"%>
 
-<i18nWeatherTagLib:i18nWeather lang="en" />
+<i18nWeatherTagLib:i18nWeather lang='<%=request.getParameter("lang")%>' />
+
+<h3>Langues</h3>
+<ul>
+    <li><a href="TagLibMultiLanguageWeather?lang=fr">FR</a></li>
+    <li><a href="TagLibMultiLanguageWeather?lang=en">EN</a></li>
+</ul>
+<br/>
 
 <%
     Locale currentLocale = new Locale(request.getAttribute("lang").toString());
@@ -35,11 +42,6 @@
 <p style="float:left;" ${weatherBean == null ? 'hidden' : ''}><%=resources.getString("sentencePart1")%> ${weatherBean.capital} <%=resources.getString("sentencePart2")%> ${weatherBean.country} <%=resources.getString("sentencePart3")%> ${weatherBean.temperature}<%=resources.getString("sentencePart4")%></p>
 <div style="clear:both"></div>
 <img style="float:left" src="GraphicWeather?country=<%out.print(request.getParameter("country"));%>" ${weatherBean == null ? 'hidden' : ''}>
-<br/>
-<h3>Langues</h3>
-<ul>
-    <li><a href="TagLibMultiLanguageWeather?lang=fr">FR</a></li>
-    <li><a href="TagLibMultiLanguageWeather?lang=en">EN</a></li>
-</ul>
+
 </body>
 </html>
