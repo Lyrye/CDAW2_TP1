@@ -7,16 +7,22 @@
 <body>
 <h1>INDEX - CDAW2</h1>
 <h2>Répertoire des TPS</h2>
+
+<h3>TP</h3>
 <ul>
-    <li><a href="hello">Hello world</a></li>
-    <li><a href="HelloWorld">Hello world JSP</a></li>
-    <li><a href="SimpleWeather">Simple Weather</a></li>
-    <li><a href="JSPWeather">Weather JSP</a></li>
-    <li><a href="JSPMultiLanguageWeather">Weather JSP - Multiple language</a></li>
-    <li><a href="Tag">TAG</a></li>
-    <li><a href="Main">Ajax</a></li>
-    <li><a href="TagLibMultiLanguageWeather">Weather TagLib - Multiple language</a></li>
-    <li><a href="faces/jsf.jsp">Java Server Faces</a></li>
+    <li><a href="SimpleWeather">TP1 - Simple Weather</a></li>
+    <li><a href="JSPWeather">TP2 - Weather JSP</a></li>
+    <li><a href="JSPMultiLanguageWeather">TP3.1 - Weather JSP - Multiple language</a></li>
+    <li><a href="TagLibMultiLanguageWeather">TP3.2 - Weather TagLib - Multiple language</a></li>
+    <li><a href="faces/jsf.jsp">TP4 - Java Server Faces</a></li>
+</ul>
+
+<h3>Exemple cours</h3>
+<ul>
+    <li><a href="hello">Servlet - Hello world</a></li>
+    <li><a href="HelloWorld">JSP - Hello world</a></li>
+    <li><a href="Tag">TAG - Hello world</a></li>
+    <li><a href="Main">Ajax - Hello Name</a></li>
 </ul>
 
 <h2>Auteurs</h2>
