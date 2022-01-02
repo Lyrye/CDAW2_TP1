@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="TP1-1.0-SNAPSHOT.war">
+    <root id="archive" name="Tps-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="TP1:war exploded" />
     </root>
   </artifact>
