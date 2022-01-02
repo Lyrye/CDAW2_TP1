@@ -47,15 +47,6 @@ public class TagLibMultiLanguageWeatherServlet extends HttpServlet {
             request.setAttribute("weatherBean", weatherBean);
         }
 
-        I18NWeather i18NWeatherBean = new I18NWeather();
-        String language = "en";
-        if (request.getParameter("lang") != null){
-            language = request.getParameter("lang");
-        }
-        request.setAttribute("lang",language);
-        i18NWeatherBean.setLang(language);
-        request.setAttribute("i18NWeatherBean", i18NWeatherBean);
-
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/WeatherTag.jsp");
         requestDispatcher.forward(request, response);
     }

@@ -11,9 +11,12 @@
 <body>
 <h1>Température TagLib</h1>
 <br/>
-<jsp:useBean id="i18NWeatherBean" beanName="i18NWeatherBean" scope="request" type="imt.nordeurope.j2ee.tp.nickler.tp3.tag.I18NWeather"/>
+<%@ taglib prefix="i18nWeatherTagLib" uri="WEB-INF/tlds/tp3.tld"%>
+
+<i18nWeatherTagLib:i18nWeather lang="en" />
+
 <%
-    Locale currentLocale = new Locale(i18NWeatherBean.getLang());
+    Locale currentLocale = new Locale(request.getAttribute("lang").toString());
     ResourceBundle resources = ResourceBundle.getBundle("imt.nordeurope.j2ee.tp.nickler.tp3.resources.WeatherTagResources", currentLocale);
 %>
 <form method='get' action='TagLibMultiLanguageWeather'>

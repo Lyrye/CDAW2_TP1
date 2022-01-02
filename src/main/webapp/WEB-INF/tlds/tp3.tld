@@ -8,19 +8,13 @@
     <uri>imt.nordeurope.j2ee.tp.nickler.tp1.taglib</uri>
     <tag>
         <name>i18nWeather</name>
-        <tagclass>imt.nordeurope.j2ee.tp.nickler.tp3.servlets.TagLibMultiLanguageWeather</tagclass>
+        <tagclass>imt.nordeurope.j2ee.tp.nickler.tp3.tag.I18NWeather</tagclass>
         <bodycontent>empty</bodycontent>
-
         <attribute>
             <name>lang</name>
             <required>true</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
-        <attribute>
-            <name>key</name>
-            <required>true</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <tag-class/>
+        <tag-class>imt.nordeurope.j2ee.tp.nickler.tp3.tag.I18NWeather</tag-class>
     </tag>
 </taglib>
